@@ -9,19 +9,21 @@ const ShowBook = () => {
   const [loading, setLoading] = useState(false);
   const { id } = useParams();
 
-  useEffect(() => {
-    setLoading(true);
-    axios
-      .get('https://library-management-backend-ndke.onrender.com`)
-      .then((response) => {
-        setBook(response.data);
-        setLoading(false);
-      })
-      .catch((error) => {
-        console.log(error);
-        setLoading(false);
-      });
-  }, []);
+  
+useEffect(() => {
+  setLoading(true);
+  axios
+    .get('https://library-management-backend-ndke.onrender.com')
+    .then((response) => {
+      setBook(response.data);
+      setLoading(false);
+    })
+    .catch((error) => {
+      console.log(error);
+      setLoading(false);
+    });
+}, []);
+
 
   return (
     <div className='p-4'>
